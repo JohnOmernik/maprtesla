@@ -8,12 +8,10 @@ The python script I wrote is actually pretty straight forward using common modul
 
 The first step is to clone and build different repository of mine. https://github.com/johnomernik/maprpaccstreams  
 
-This repository has a simple build script and should be build by
+This can all be done via a simple command in this repo:
 
 ```
-git clone https://github.com/johnomernik/maprpaccstreams
-cd maprpaccstreams
-./build.sh 
+./build.sh
 ```
 
 Once this is build it should be tagged maprpaccstreams:latest and be ready to use!
@@ -24,6 +22,7 @@ At this point you want to take the env.list.template and copy to env.list
 ```
 cp env.list.template env.list
 ```
+
 Now you should go through and update the variables in env.list.
 
 It should be fairly easy to understand, I've listed the application specific variables below but other variables related to the back are explained here:
@@ -49,4 +48,5 @@ Optional Variables
 TESLA_FULL_DATA_SECS            # This is the interval to pull the full data (non-streaming) data from car (Defaults to 120 seconds)
 TESLA_REFRESH_SECS              # This is the interval in which when the time remaining on the token is below, it will request a new token from Tesla. (Defaults to 50,000 seonds)
 TESLA_HTTP_TIMEOUT_SECS         # This is the timeout we set on the streaming protocol. If we don't see data in this time, we reconnect. (Defaults to 30 seconds) 
+TESLA_STDOUT_INTERVAL           # This is the interval where it prints a success message at (Just to let you know things are happening) it defaults to 1800 seconds (30 minutes)
 
