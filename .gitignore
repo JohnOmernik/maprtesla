@@ -3,3 +3,4 @@ env.list.docker
 safe/creds
 safe/mapr_ticket
 safe/token
+maprpaccstreams/
