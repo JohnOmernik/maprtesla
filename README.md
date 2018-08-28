@@ -29,6 +29,14 @@ It should be fairly easy to understand, I've listed the application specific var
 
 https://mapr.com/docs/home/AdvancedInstallation/RunningtheMapRPACC.html
 
+### creds file
+In the folder ./safe you will need a creds file to do this:
+
+```
+cp ./creds.template ./safe/creds
+```
+
+Then open the ./safe/creds file and put your Tesla Account login information in the uname and pword fields
 
 
 ### ENV Variables
