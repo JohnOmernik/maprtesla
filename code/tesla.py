@@ -14,43 +14,43 @@ import random
 
 
 try:
-    token_file = os.environ["TESLA_TOKEN_FILE"].replace('"', '')
+    token_file = os.environ["APP_TESLA_TOKEN_FILE"].replace('"', '')
 except:
-    print("You must provide a TESLA_TOKEN_FILE location that is writable")
+    print("You must provide a APP_TESLA_TOKEN_FILE location that is writable")
     sys.exit(1)
 
 try:
-    creds_file = os.environ["TESLA_CREDS_FILE"].replace('"', '')
+    creds_file = os.environ["APP_TESLA_CREDS_FILE"].replace('"', '')
 except:
-    print("You must provide a TESLA_CREDS_FILE that contains your Tesla authentication")
+    print("You must provide a APP_TESLA_CREDS_FILE that contains your Tesla authentication")
     sys.exit(1)
 
 try:
-    carname = os.environ["TESLA_CARNAME"].replace('"', '')
+    carname = os.environ["APP_TESLA_CARNAME"].replace('"', '')
 except:
-    print("You must provide a TESLA_CARNAME for us to work with")
+    print("You must provide a APP_TESLA_CARNAME for us to work with")
     sys.exit(1)
 
 try:
-    refresh_secs = int(os.environ["TESLA_REFRESH_SECS"].replace('"', ''))
+    refresh_secs = int(os.environ["APP_TESLA_REFRESH_SECS"].replace('"', ''))
 except:
-    print("TESLA_REFRESH_SECS has not been set, using a default of: 50000")
+    print("APP_TESLA_REFRESH_SECS has not been set, using a default of: 50000")
     refresh_secs = 50000
 
 try:
-    data_secs = int(os.environ["TESLA_FULL_DATA_SECS"].replace('"', ''))
+    data_secs = int(os.environ["APP_TESLA_FULL_DATA_SECS"].replace('"', ''))
 except:
     print("Full data refresh interval not provided, using default of 120 seconds")
     data_secs = 120
 
 try:
-    http_timeout = int(os.environ["TESLA_HTTP_TIMEOUT_SECS"].replace('"', ''))
+    http_timeout = int(os.environ["APP_TESLA_HTTP_TIMEOUT_SECS"].replace('"', ''))
 except:
     print("Tesla HTTP timeout not provided, setting to 30 second default")
     http_timeout = 30
 
 try:
-    stdout_interval = int(os.environ["TESLA_STDOUT_INTERVAL"].replace('"', ''))
+    stdout_interval = int(os.environ["APP_TESLA_STDOUT_INTERVAL"].replace('"', ''))
 except:
     print("Tesla STDOUT_INTERVAL not provided, defauling to 30 minutes (1800 secs)")
     stdout_interval = 1800

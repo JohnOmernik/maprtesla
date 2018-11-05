@@ -2,6 +2,10 @@
 A python script to read Tesla API data and push to MapR Streams
 
 
+## Clone
+
+It really helps to clone this to a MapR location to start with. It helps the stuff down the line 
+
 ## Build
 
 The python script I wrote is actually pretty straight forward using common modules. I included a second copy of the script that was my early work to just write to files.  This could also work with MapR-FS through the fuse client or NFS Server, however, I wanted to put the data on streams. 
@@ -38,6 +42,14 @@ cp ./creds.template ./safe/creds
 
 Then open the ./safe/creds file and put your Tesla Account login information in the uname and pword fields
 
+### maprticket
+
+In the folder ./safe you will need the creds and a mapr ticket for the user you want to use.  The permissions on the safe directory need to be
+
+```
+chown -R  youruser:yourgroup ./safe
+chmod 770 ./safe
+```
 
 ### ENV Variables
 
@@ -66,3 +78,19 @@ TESLA_HTTP_TIMEOUT_SECS         # This is the timeout we set on the streaming pr
 
 TESLA_STDOUT_INTERVAL           # This is the interval where it prints a success message at (Just to let you know things are happening) it defaults to 1800 seconds (30 minutes)
 
+
+### Creating your stream 
+
+Once you have updated your env.list, you are ready to create the stream per the information in the env.list file.  simply run
+
+```
+./mkstream.sh
+```
+From a computer that has access to your maprcli as defined in the env.list file.  This will automatically create a volume, a stream and the topics in MapR based on the paths you set in env.list
+
+
+### Running
+
+To run the container, just run ./run.sh  This will put you in the container.  From here, you need to cd to the location within MapR that has the code directory. (You did clone into MapR FS right?)
+
+Then 

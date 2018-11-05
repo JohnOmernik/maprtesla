@@ -1,0 +1,17 @@
+{
+  "timestamp": "1533644896888",
+  "speed": "",
+  "odometer": "str_redact",
+  "soc": "90",
+  "elevation": "354",
+  "est_heading": "2",
+  "est_lat": "str_redact",
+  "est_lng": "str_redact",
+  "power": "0",
+  "shift_state": "",
+  "native_type": "wgs",
+  "heading": "2",
+  "native_latitude": "str_redact",
+  "native_longitude": "str_redact"
+}
+

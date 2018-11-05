@@ -3,9 +3,8 @@
 . ./env.list
 MYDIR=$(pwd)
 
-REPO="maprpaccstreams"
-git clone https://github.com/johnomernik/$REPO
-cd $REPO
-sudo docker build -t $IMG .
+git clone https://github.com/$APP_GIT_USER/$APP_GIT_REPO
+cd $APP_GIT_REPO
+./build.sh
 cd ..
 
