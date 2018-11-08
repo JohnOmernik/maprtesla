@@ -93,4 +93,5 @@ From a computer that has access to your maprcli as defined in the env.list file.
 
 To run the container, just run ./run.sh  This will put you in the container.  From here, you need to cd to the location within MapR that has the code directory. (You did clone into MapR FS right?)
 
-Then 
+From here, cd to the code directory, and run tesla.py. 
+
